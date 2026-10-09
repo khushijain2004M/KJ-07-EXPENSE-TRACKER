@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ledger Night · Expense Tracker</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="top">
+        <a class="brand" href="./"
+          ><span class="logo">L</span
+          ><span
+            ><strong>LEDGER NIGHT</strong
+            ><small>LOCAL MONEY TRACKER</small></span
+          ></a
+        ><button
+          id="sample"
+          class="primary"
+          style="width: auto; padding: 0 16px"
+        >
+          Load sample
+        </button>
+      </header>
+      <section class="hero">
+        <span>PRIVATE · LOCAL · CLEAR</span>
+        <h1>Know where it went.</h1>
+        <p>Track income and expenses without creating an account.</p>
+      </section>
+      <section class="metrics">
+        <article class="card metric">
+          <span>BALANCE</span><b id="balance">₹0.00</b
+          ><small>Income minus expenses</small>
+        </article>
+        <article class="card metric">
+          <span>INCOME</span><b class="income" id="income">₹0.00</b
+          ><small>Filtered total</small>
+        </article>
+        <article class="card metric">
+          <span>EXPENSES</span><b class="expense" id="expenses">₹0.00</b
+          ><small>Filtered total</small>
+        </article>
+        <article class="card metric">
+          <span>MONTHLY BUDGET</span><b id="budgetText">₹0.00</b>
+          <div class="budget"><span id="budgetBar"></span></div>
+        </article>
+      </section>
+      <section class="main">
+        <article class="card form">
+          <h2>Add transaction</h2>
+          <form id="form">
+            <label class="field"
+              >Description<input
+                id="title"
+                maxlength="50"
+                placeholder="Groceries, salary…"
+            /></label>
+            <div class="two">
+              <label class="field"
+                >Amount<input
+                  id="amount"
+                  inputmode="decimal"
+                  placeholder="0.00" /></label
+              ><label class="field"
+                >Type<select id="type">
+                  <option value="expense">Expense</option>
+                  <option value="income">Income</option>
+                </select></label
+              >
+            </div>
+            <div class="two">
+              <label class="field"
+                >Category<select id="category">
+                  <option>Food</option>
+                  <option>Transport</option>
+                  <option>Bills</option>
+                  <option>Shopping</option>
+                  <option>Salary</option>
+                  <option>Other</option>
+                </select></label
+              ><label class="field">Date<input id="date" type="date" /></label>
+            </div>
+            <label class="field"
+              >Monthly budget<input
+                id="budget"
+                inputmode="decimal"
+                placeholder="Optional"
+            /></label>
+            <p class="error" id="error"></p>
+            <button class="primary">Save transaction</button>
+          </form>
+        </article>
+        <article class="card ledger">
+          <div class="section-head">
+            <h2>Transactions</h2>
+            <span id="count">0 entries</span>
+          </div>
+          <div class="filters">
+            <input id="search" placeholder="Search transactions" /><select
+              id="filter"
+            >
+              <option value="all">All types</option>
+              <option value="income">Income</option>
+              <option value="expense">Expenses</option></select
+            ><input id="month" type="month" />
+          </div>
+          <div class="transactions" id="list"></div>
+          <div class="foot">
+            <button id="export">Export CSV</button
+            ><button id="clear">Clear all</button>
+          </div>
+        </article>
+      </section>
+      <footer class="khushi-credit" style="position:relative;margin-top:42px;padding:32px 24px 18px;border:1px solid #5261812b;border-radius:18px;background:linear-gradient(135deg,#050a15f2,#071525eb 55%,#16091ceb);color:#91a0b9;font:500 12px/1.7 Inter,system-ui,sans-serif;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,#22d3ee14 50%,transparent 50.2%),linear-gradient(#a855f70d 1px,transparent 1px);background-size:420px 100%,100% 46px;pointer-events:none"></div>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:42px;align-items:start">
+          <section>
+            <strong style="display:block;color:#f8fafc;font:800 20px/1.1 ui-monospace,monospace;letter-spacing:.04em"><span style="color:#22d3ee">[</span><span style="color:#a855f7">SM</span><span style="color:#22d3ee">]</span></strong>
+            <p style="max-width:430px;margin:16px 0 10px;color:#9eabc1;font-size:14px">Learning by building — from modern web experiences to strong software-engineering fundamentals.</p>
+            <small style="display:block;color:#71829d;font:700 9px ui-monospace,monospace;letter-spacing:.2em">B.TECH IT STUDENT · FULL STACK DEVELOPER · BUILDER</small>
+            <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
+              <a aria-label="GitHub" href="https://github.com/khushijain2004M" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">GH</a>
+              <a aria-label="LinkedIn" href="https://github.com/khushijain2004M" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">in</a>
+              <a aria-label="Email" href="https://github.com/khushijain2004M" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">@</a>
+              <a aria-label="Portfolio" href="https://github.com/khushijain2004M" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">↗</a>
+            </div>
+          </section>
+          <section>
+            <small style="display:block;color:#f8fafc;font:800 9px ui-monospace,monospace;letter-spacing:.2em">GET IN TOUCH</small>
+            <a href="https://github.com/khushijain2004M" style="display:block;margin-top:17px;color:#9eabc1;text-decoration:none;font-size:14px">github.com/khushijain2004M</a>
+            <p style="margin:12px 0;color:#9eabc1;font-size:14px">India</p>
+            <p style="display:flex;align-items:center;gap:8px;margin:12px 0;color:#bad8cb"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1ee6a7;box-shadow:0 0 14px #1ee6a7"></i>Open to internships &amp; collaboration</p>
+            <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:20px"><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">JavaScript</span><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">HTML</span><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">CSS</span></div>
+          </section>
+        </div>
+        <div style="position:relative;margin-top:28px;padding-top:16px;border-top:1px solid #5261812b;color:#65738c;font-size:10px">© 2026 Khushi Jain. Built with code, curiosity and creativity.</div>
+      </footer>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+
